@@ -45,15 +45,6 @@ class Partner extends Base
     protected $appends = ['status', 'title', 'thumb', 'website'];
 
     /**
-     * Columns that are file.
-     *
-     * @var array
-     */
-    public $attachments = [
-        'image',
-    ];
-
-    /**
      * Get attribute from translation table
      * and append it to main model attributes.
      *
