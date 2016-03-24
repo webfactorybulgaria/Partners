@@ -46,10 +46,11 @@ class Partner extends Base
      * Columns that are file.
      *
      * @var array
-     */
+    Not needed with elFinder
     public $attachments = [
         'image',
     ];
+    */
 
     protected $appends = ['status', 'title', 'thumb', 'website'];
 
