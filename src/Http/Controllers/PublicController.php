@@ -9,7 +9,7 @@ class PublicController extends BasePublicController
 {
     public function __construct(PartnerInterface $partner)
     {
-        parent::__construct($partner);
+        parent::__construct($partner, 'partners');
     }
 
     /**
