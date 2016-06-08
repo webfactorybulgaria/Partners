@@ -11,6 +11,6 @@ class PartnerTranslation extends BaseTranslation
      */
     public function owner()
     {
-        return $this->belongsTo('TypiCMS\Modules\Partners\Models\Partner', 'partner_id');
+        return $this->belongsTo('TypiCMS\Modules\Partners\Models\Partner', 'partner_id')->withoutGlobalScopes();
     }
 }
