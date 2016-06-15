@@ -44,18 +44,18 @@ class RouteServiceProvider extends ServiceProvider
             /*
              * Admin routes
              */
-            $router->get('admin/partners', ['as' => 'admin.partners.index', 'uses' => 'AdminController@index']);
-            $router->get('admin/partners/create', ['as' => 'admin.partners.create', 'uses' => 'AdminController@create']);
-            $router->get('admin/partners/{partner}/edit', ['as' => 'admin.partners.edit', 'uses' => 'AdminController@edit']);
-            $router->post('admin/partners', ['as' => 'admin.partners.store', 'uses' => 'AdminController@store']);
-            $router->put('admin/partners/{partner}', ['as' => 'admin.partners.update', 'uses' => 'AdminController@update']);
+            $router->get('admin/partners', 'AdminController@index')->name('admin::index-partners');
+            $router->get('admin/partners/create', 'AdminController@create')->name('admin::create-partner');
+            $router->get('admin/partners/{partner}/edit', 'AdminController@edit')->name('admin::edit-partner');
+            $router->post('admin/partners', 'AdminController@store')->name('admin::store-partner');
+            $router->put('admin/partners/{partner}', 'AdminController@update')->name('admin::update-partner');
 
             /*
              * API routes
              */
-            $router->get('api/partners', ['as' => 'api.partners.index', 'uses' => 'ApiController@index']);
-            $router->put('api/partners/{partner}', ['as' => 'api.partners.update', 'uses' => 'ApiController@update']);
-            $router->delete('api/partners/{partner}', ['as' => 'api.partners.destroy', 'uses' => 'ApiController@destroy']);
+            $router->get('api/partners', 'ApiController@index')->name('api::index-partners');
+            $router->put('api/partners/{partner}', 'ApiController@update')->name('api::update-partner');
+            $router->delete('api/partners/{partner}', 'ApiController@destroy')->name('api::destroy-partner');
         });
     }
 }
