@@ -5,14 +5,14 @@ namespace TypiCMS\Modules\Partners\Providers;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
-use TypiCMS\Modules\Core\Custom\Facades\TypiCMS;
-use TypiCMS\Modules\Core\Custom\Observers\FileObserver;
-use TypiCMS\Modules\Core\Custom\Observers\SlugObserver;
-use TypiCMS\Modules\Core\Custom\Services\Cache\LaravelCache;
-use TypiCMS\Modules\Partners\Custom\Models\Partner;
-use TypiCMS\Modules\Partners\Custom\Models\PartnerTranslation;
-use TypiCMS\Modules\Partners\Custom\Repositories\CacheDecorator;
-use TypiCMS\Modules\Partners\Custom\Repositories\EloquentPartner;
+use TypiCMS\Modules\Core\Shells\Facades\TypiCMS;
+use TypiCMS\Modules\Core\Shells\Observers\FileObserver;
+use TypiCMS\Modules\Core\Shells\Observers\SlugObserver;
+use TypiCMS\Modules\Core\Shells\Services\Cache\LaravelCache;
+use TypiCMS\Modules\Partners\Shells\Models\Partner;
+use TypiCMS\Modules\Partners\Shells\Models\PartnerTranslation;
+use TypiCMS\Modules\Partners\Shells\Repositories\CacheDecorator;
+use TypiCMS\Modules\Partners\Shells\Repositories\EloquentPartner;
 
 class ModuleProvider extends ServiceProvider
 {
@@ -37,7 +37,7 @@ class ModuleProvider extends ServiceProvider
 
         AliasLoader::getInstance()->alias(
             'Partners',
-            'TypiCMS\Modules\Partners\Custom\Facades\Facade'
+            'TypiCMS\Modules\Partners\Shells\Facades\Facade'
         );
 
         // Observers
@@ -52,12 +52,12 @@ class ModuleProvider extends ServiceProvider
         /*
          * Register route service provider
          */
-        $app->register('TypiCMS\Modules\Partners\Custom\Providers\RouteServiceProvider');
+        $app->register('TypiCMS\Modules\Partners\Shells\Providers\RouteServiceProvider');
 
         /*
          * Sidebar view composer
          */
-        $app->view->composer('core::admin._sidebar', 'TypiCMS\Modules\Partners\Custom\Composers\SidebarViewComposer');
+        $app->view->composer('core::admin._sidebar', 'TypiCMS\Modules\Partners\Shells\Composers\SidebarViewComposer');
 
         /*
          * Add the page in the view.
@@ -66,7 +66,7 @@ class ModuleProvider extends ServiceProvider
             $view->page = TypiCMS::getPageLinkedToModule('partners');
         });
 
-        $app->bind('TypiCMS\Modules\Partners\Custom\Repositories\PartnerInterface', function (Application $app) {
+        $app->bind('TypiCMS\Modules\Partners\Shells\Repositories\PartnerInterface', function (Application $app) {
             $repository = new EloquentPartner(new Partner());
             if (!config('typicms.cache')) {
                 return $repository;

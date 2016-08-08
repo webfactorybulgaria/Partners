@@ -2,7 +2,7 @@
 
 namespace TypiCMS\Modules\Partners\Models;
 
-use TypiCMS\Modules\Core\Custom\Models\BaseTranslation;
+use TypiCMS\Modules\Core\Shells\Models\BaseTranslation;
 
 class PartnerTranslation extends BaseTranslation
 {
@@ -11,6 +11,6 @@ class PartnerTranslation extends BaseTranslation
      */
     public function owner()
     {
-        return $this->belongsTo('TypiCMS\Modules\Partners\Custom\Models\Partner', 'partner_id')->withoutGlobalScopes();
+        return $this->belongsTo('TypiCMS\Modules\Partners\Shells\Models\Partner', 'partner_id')->withoutGlobalScopes();
     }
 }

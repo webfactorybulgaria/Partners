@@ -1,6 +1,6 @@
 <?php
 
-namespace TypiCMS\Modules\Partners\Custom\Repositories;
+namespace TypiCMS\Modules\Partners\Shells\Repositories;
 
 use TypiCMS\Modules\Partners\Repositories\EloquentPartner as Base;
 

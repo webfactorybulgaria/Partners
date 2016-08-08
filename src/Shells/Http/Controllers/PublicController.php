@@ -1,6 +1,6 @@
 <?php
 
-namespace TypiCMS\Modules\Partners\Custom\Http\Controllers;
+namespace TypiCMS\Modules\Partners\Shells\Http\Controllers;
 
 use TypiCMS\Modules\Partners\Http\Controllers\PublicController as Base;
 
