@@ -2,10 +2,10 @@
 
 namespace TypiCMS\Modules\Partners\Http\Controllers;
 
-use TypiCMS\Modules\Core\Http\Controllers\BaseAdminController;
-use TypiCMS\Modules\Partners\Http\Requests\FormRequest;
-use TypiCMS\Modules\Partners\Models\Partner;
-use TypiCMS\Modules\Partners\Repositories\PartnerInterface;
+use TypiCMS\Modules\Core\Shells\Http\Controllers\BaseAdminController;
+use TypiCMS\Modules\Partners\Shells\Http\Requests\FormRequest;
+use TypiCMS\Modules\Partners\Shells\Models\Partner;
+use TypiCMS\Modules\Partners\Shells\Repositories\PartnerInterface;
 
 class AdminController extends BaseAdminController
 {
@@ -40,7 +40,7 @@ class AdminController extends BaseAdminController
     /**
      * Edit form for the specified resource.
      *
-     * @param \TypiCMS\Modules\Partners\Models\Partner $partner
+     * @param \TypiCMS\Modules\Partners\Shells\Models\Partner $partner
      *
      * @return \Illuminate\View\View
      */
@@ -53,7 +53,7 @@ class AdminController extends BaseAdminController
     /**
      * Store a newly created resource in storage.
      *
-     * @param \TypiCMS\Modules\Partners\Http\Requests\FormRequest $request
+     * @param \TypiCMS\Modules\Partners\Shells\Http\Requests\FormRequest $request
      *
      * @return \Illuminate\Http\RedirectResponse
      */
@@ -67,8 +67,8 @@ class AdminController extends BaseAdminController
     /**
      * Update the specified resource in storage.
      *
-     * @param \TypiCMS\Modules\Partners\Models\Partner            $partner
-     * @param \TypiCMS\Modules\Partners\Http\Requests\FormRequest $request
+     * @param \TypiCMS\Modules\Partners\Shells\Models\Partner            $partner
+     * @param \TypiCMS\Modules\Partners\Shells\Http\Requests\FormRequest $request
      *
      * @return \Illuminate\Http\RedirectResponse
      */

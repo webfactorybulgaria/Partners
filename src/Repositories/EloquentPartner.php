@@ -3,7 +3,7 @@
 namespace TypiCMS\Modules\Partners\Repositories;
 
 use Illuminate\Database\Eloquent\Model;
-use TypiCMS\Modules\Core\Repositories\RepositoriesAbstract;
+use TypiCMS\Modules\Core\Shells\Repositories\RepositoriesAbstract;
 
 class EloquentPartner extends RepositoriesAbstract implements PartnerInterface
 {
