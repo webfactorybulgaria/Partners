@@ -2,9 +2,9 @@
 
 namespace TypiCMS\Modules\Partners\Shells\Composers;
 
-use TypiCMS\Modules\Partners\Composers\SidebarViewComposer as Base;
+use TypiCMS\Modules\Partners\Composers\SidebarViewComposer as BaseClass;
 
-class SidebarViewComposer extends Base
+class SidebarViewComposer extends BaseClass
 {
 
 }

@@ -2,9 +2,9 @@
 
 namespace TypiCMS\Modules\Partners\Shells\Repositories;
 
-use TypiCMS\Modules\Partners\Repositories\CacheDecorator as Base;
+use TypiCMS\Modules\Partners\Repositories\CacheDecorator as BaseClass;
 
-class CacheDecorator extends Base implements PartnerInterface
+class CacheDecorator extends BaseClass implements PartnerInterface
 {
 
 }

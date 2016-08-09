@@ -2,9 +2,9 @@
 
 namespace TypiCMS\Modules\Partners\Shells\Models;
 
-use TypiCMS\Modules\Partners\Models\Partner as Base;
+use TypiCMS\Modules\Partners\Models\Partner as BaseClass;
 
-class Partner extends Base
+class Partner extends BaseClass
 {
 
 }
